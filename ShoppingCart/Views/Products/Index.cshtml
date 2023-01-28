@@ -4,24 +4,22 @@
         ViewData["Title"] = "Products";
 }
 
-<h1>Products</h1>
-
-<div class="row">
+<h1 class="row justify-content-md-center">WELCOME</h1>
+<br />
         @foreach (var item in Model)
         {
-                <div class="col-4">
-                        <img src="/media/products/@item.Image" class="img-fluid" alt="" />
-                        <h4>@item.Name</h4>
-                        <div>
-                                @Html.Raw(item.Description)
-                        </div>
-                        <p>
-                                @item.Price.ToString("C2")
-                        </p>
-                        <p>
-                                <a class="btn btn-primary" asp-controller="Cart" asp-action="Add" asp-route-id="@item.Id">Add to cart</a>
-                        </p>
-                </div>
+    <div class="card">
+
+        <div class="imgBox">
+            <img src="/media/products/@item.Image" alt="" class="img-fluid">
+         </div>
+
+        <div class="contentBox">
+            <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+            <h2 class="price">@Html.DisplayFor(modelItem => item.Price) $</h2>
+            <a asp-controller="Cart" asp-action="Add" asp-route-id="@item.Id" class="buy">Buy Now</a>
+         </div>
+    </div>
         }
 
 
@@ -36,4 +34,3 @@
                 </div>
         }
 
-</div>

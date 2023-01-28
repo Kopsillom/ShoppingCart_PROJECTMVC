@@ -607,7 +607,7 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
 }
 
@@ -2007,7 +2007,8 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background: black;
+  background-color: #212529;
   background-clip: padding-box;
   border: 0 solid transparent;
   -webkit-appearance: none;

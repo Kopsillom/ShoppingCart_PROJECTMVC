@@ -13,9 +13,6 @@ namespace ShoppingCart.Models
 
                 public string Slug { get; set; }
 
-                [Required, MinLength(4, ErrorMessage = "Minimum length is 2")]
-                public string Description { get; set; }
-
                 [Required]
                 [Range(0.01, double.MaxValue, ErrorMessage = "Please enter a value")]
                 [Column(TypeName = "decimal(8, 2)")]

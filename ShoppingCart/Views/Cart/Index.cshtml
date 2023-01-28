@@ -20,21 +20,21 @@
                                 <td>@item.ProductName</td>
                                 <td>@item.Quantity</td>
                                 <td>
-                                        <a class="btn btn-primary btn-sm" asp-action="Add" asp-route-id="@item.ProductId">+</a>
-                                        <a class="btn btn-info btn-sm" asp-action="Decrease" asp-route-id="@item.ProductId">-</a>
-                                        <a class="btn btn-danger btn-sm" asp-action="Remove" asp-route-id="@item.ProductId">Remove</a>
+                                        <a class="btn btn-outline-success btn-sm" asp-action="Add" asp-route-id="@item.ProductId">Add 1 </a>
+                                        <a class="btn btn-outline-warning btn-sm" asp-action="Decrease" asp-route-id="@item.ProductId">Remove 1</a>
+                                        <a class="btn btn-outline-danger btn-sm" asp-action="Remove" asp-route-id="@item.ProductId">Discard Item</a>
                                 </td>
                                 <td>@item.Price.ToString("C2")</td>
                                 <td>@Model.CartItems.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString("C2")</td>
                         </tr>
                 }
                 <tr>
-                        <td class="text-right" colspan="4">Grand Total: @Model.GrandTotal.ToString("C2")</td>
+                        <td class="text-right" colspan="4">Cart Total : @Model.GrandTotal.ToString("C2")</td>
                 </tr>
                 <tr>
-                        <td class="text-right" colspan="4">
-                                <a class="btn btn-danger" asp-action="Clear">Clear Cart</a>
-                                <a class="btn btn-primary" href="#">Checkout</a>
+                        <td class="text-left">
+                                <a class="btn btn-danger" asp-action="Clear">Clear Entire Cart</a>
+                                <a class="btn btn-success" href="#">Checkout</a>
                         </td>
                 </tr>
         </table>
